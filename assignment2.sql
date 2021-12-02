@@ -5,7 +5,7 @@
 3.	EXCEPT and INTERSECT
 4.	Union combines multiple SELECT statement queries into new rows. Join is used to combine data from multiple tables into new columns. The number of rows depends on the kinds of joins and the queries.
 5.	INNER JOIN will return the rows that has matched elements in both queries. FULL JOIN will return all the rows of both queries combined.
-6.  Left join is a type of outer join. Left outer join will return all rows from left query, even if they have no matches with the right query
+6.	Left join is a type of outer join. Left outer join will return all rows from left query, even if they have no matches with the right query
 7.	Cross join returns the cartesian product (number of rows in first table multiplied by number on right).
 8.	WHERE only works on columns that already exist in original queries, usually after FROM. Having can be used on columns not included the in original query.
 9.	yes. If that happens the columns SQL will put the rows with the same values in all those columns in the same group.
