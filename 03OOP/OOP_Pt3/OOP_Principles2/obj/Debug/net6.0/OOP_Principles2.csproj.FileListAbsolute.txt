@@ -1,0 +1,15 @@
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\bin\Debug\net6.0\OOP_Principles2.exe
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\bin\Debug\net6.0\OOP_Principles2.deps.json
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\bin\Debug\net6.0\OOP_Principles2.runtimeconfig.json
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\bin\Debug\net6.0\OOP_Principles2.dll
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\bin\Debug\net6.0\ref\OOP_Principles2.dll
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\bin\Debug\net6.0\OOP_Principles2.pdb
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\obj\Debug\net6.0\OOP_Principles2.csproj.AssemblyReference.cache
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\obj\Debug\net6.0\OOP_Principles2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\obj\Debug\net6.0\OOP_Principles2.AssemblyInfoInputs.cache
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\obj\Debug\net6.0\OOP_Principles2.AssemblyInfo.cs
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\obj\Debug\net6.0\OOP_Principles2.csproj.CoreCompileInputs.cache
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\obj\Debug\net6.0\OOP_Principles2.dll
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\obj\Debug\net6.0\ref\OOP_Principles2.dll
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\obj\Debug\net6.0\OOP_Principles2.pdb
+C:\Users\Basel\source\repos\OOP_Principles2\OOP_Principles2\obj\Debug\net6.0\OOP_Principles2.genruntimeconfig.cache
