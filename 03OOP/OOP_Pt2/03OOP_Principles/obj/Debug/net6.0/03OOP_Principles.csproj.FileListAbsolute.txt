@@ -1,0 +1,15 @@
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\obj\Debug\net6.0\03OOP_Principles.csproj.AssemblyReference.cache
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\obj\Debug\net6.0\03OOP_Principles.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\obj\Debug\net6.0\03OOP_Principles.AssemblyInfoInputs.cache
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\obj\Debug\net6.0\03OOP_Principles.AssemblyInfo.cs
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\obj\Debug\net6.0\03OOP_Principles.csproj.CoreCompileInputs.cache
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\bin\Debug\net6.0\03OOP_Principles.exe
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\bin\Debug\net6.0\03OOP_Principles.deps.json
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\bin\Debug\net6.0\03OOP_Principles.runtimeconfig.json
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\bin\Debug\net6.0\03OOP_Principles.dll
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\bin\Debug\net6.0\ref\03OOP_Principles.dll
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\bin\Debug\net6.0\03OOP_Principles.pdb
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\obj\Debug\net6.0\03OOP_Principles.dll
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\obj\Debug\net6.0\ref\03OOP_Principles.dll
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\obj\Debug\net6.0\03OOP_Principles.pdb
+C:\Users\Basel\source\repos\03OOP_Principles\03OOP_Principles\obj\Debug\net6.0\03OOP_Principles.genruntimeconfig.cache
