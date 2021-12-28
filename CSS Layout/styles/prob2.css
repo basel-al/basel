@@ -1,0 +1,76 @@
+.subfooter
+{
+	background-color: black;
+	color: #EEEEEE;
+	padding-left: 80px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+
+}
+.contactinfo{
+	color:#A9ABAD;
+	padding-left: 80px;
+	padding-top: 15px;
+	line-height: 25px;
+}
+.section
+{
+	background-color: #272E31;
+}
+section
+{
+	padding:0;
+}
+.nav_menu ul
+{
+	list-style-type: none;
+	padding:0;
+	
+}
+.fonts
+{
+	font-family: Raleway, sans-serif;
+	color: #FFFFFF;
+	font-size: 14px;
+	margin: 0 auto;
+
+}
+.column {
+	float: left;
+	width: 300px;
+  }
+  
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+a
+{
+	text-decoration: none;
+	color:#A9ABAD;
+}
+li
+{
+	padding: 10px;
+}
+.iconbar
+{
+	float: left;
+	padding-left: 600px;
+}
+.copyright
+{
+	display:inline-block;
+}
+.iconlist
+{
+	display:inline-block;
+	list-style: none;
+	padding-left: 750px;
+}
+.iconlist > li
+{
+	display:inline-block;
+
+} 

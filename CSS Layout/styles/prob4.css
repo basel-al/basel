@@ -1,0 +1,120 @@
+#wrapper
+{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+body
+{
+    background-color: black;
+}
+#topbar
+{
+    height: 300px;
+    background-image: url("field.jpg");
+    
+}
+h1
+{
+    color: white;
+    padding-top: 200px;
+    padding-right: 40px;
+    float:right
+}
+td a
+{
+text-decoration: none;
+}
+td a:visited 
+{ 
+    text-decoration: none; 
+    color: black; 
+   }
+
+tr *
+{
+    padding: 15px;
+    padding-right: 18px;
+    padding-left: 18px;
+}
+#current
+{
+    background-image: linear-gradient(to bottom, #BEBEBE, #AFAFAF);
+    white-space: nowrap;
+}
+#current a
+{
+    color:white;
+}
+.rest
+{
+    background-image: linear-gradient(to bottom, #EFEFEF, #D9D9D9);
+    color:black;
+    white-space: nowrap;
+}
+#last
+{
+    background-image: linear-gradient(to bottom, #EFEFEF, #D9D9D9);
+    width: 99.9%;
+}
+#col1
+{
+    width: 700px;
+    padding-left: 25px;
+    padding-right: 15px;
+    padding-top: 20px;
+    display:inline-block;
+float: left;
+}
+.box
+{
+    border: solid #E5E5E5 2px ;
+    border-radius:10px;
+}
+.box h2,.box p, .box img
+{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#box3
+{
+    background-color: #EEEEEE;
+}
+#col2
+{
+    padding-top: 20px;
+    width:230px;
+    display:inline-block;
+float: left;
+}
+h2
+{
+    color: #7FBB06;
+}
+.pic
+{
+  
+    display:inline-block;
+    float: left;
+}
+.box p a
+{
+    color: #7FBB06;
+}
+#footer
+{
+    padding-top: 50px;
+    width: 1000px; 
+    display: inline-block;
+}
+#footbar
+{
+    background-image: linear-gradient(to bottom, #A5D946, #88C21E);
+    padding-bottom: 40px;
+    padding-left: 100px;
+    color: black;
+    padding-top: 25px;
+}
+
+/*https://www.pexels.com/photo/road-in-between-grass-field-1423597/*/
