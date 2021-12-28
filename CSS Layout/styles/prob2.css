@@ -1,76 +1,96 @@
-.subfooter
-{
-	background-color: black;
-	color: #EEEEEE;
-	padding-left: 80px;
-	padding-top: 20px;
-	padding-bottom: 30px;
-
-}
 .contactinfo{
 	color:#A9ABAD;
-	padding-left: 80px;
-	padding-top: 15px;
 	line-height: 25px;
+
 }
-.section
+#toppart
+{	
+	padding: 15px;
+	display: flex;
+	justify-content: space-between; 
+	min-width: 1200px;
+	
+}
+#toppart div
+{	
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 30px;
+	
+}
+#topcolor
 {
 	background-color: #272E31;
 }
-section
+.nav_menu
 {
-	padding:0;
+	padding: 0;
+}
+h3
+{
+	color: #FFFFFF;
+	margin: 0;
+	padding-bottom: 10px;
 }
 .nav_menu ul
 {
 	list-style-type: none;
-	padding:0;
-	
+	padding:0px;
+	margin: 0;
 }
-.fonts
+.nav_menu ul li
 {
-	font-family: Raleway, sans-serif;
-	color: #FFFFFF;
-	font-size: 14px;
-	margin: 0 auto;
+	padding:2px;
 
-}
-.column {
-	float: left;
-	width: 300px;
-  }
-  
-.row:after {
-	content: "";
-	display: table;
-	clear: both;
 }
 a
 {
 	text-decoration: none;
-	color:#A9ABAD;
+	color: white;
 }
-li
+hr
 {
-	padding: 10px;
-}
-.iconbar
-{
-	float: left;
-	padding-left: 600px;
-}
-.copyright
-{
-	display:inline-block;
+	background-color: gray;
+	height: 1px;
+	border: none;
 }
 .iconlist
 {
-	display:inline-block;
+	float:right;
 	list-style: none;
-	padding-left: 750px;
+	padding: 0;
+	
 }
-.iconlist > li
+.iconlist li
 {
 	display:inline-block;
+	padding: 2px;
 
 } 
+#subfootercolor
+{
+	background-color: black;
+}
+#subfooter
+{
+	
+
+	color: #EEEEEE;
+	display: flex;
+	justify-content: space-between; 
+	min-width: 1200px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+
+}
+.copyright
+{
+	padding-top: 15px;
+	display: inline-block;
+	
+}
+body
+{
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

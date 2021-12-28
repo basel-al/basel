@@ -245,6 +245,7 @@ h2
     margin: 0 auto;
     padding-top: 50px;
     display:inline-block;
+    width: 100%;
 
 }
 #footbar
@@ -253,6 +254,7 @@ h2
     text-align: center;
     display: inline-block;
     float: left;
+    width: 100%;
     
     
 }

@@ -43,8 +43,6 @@ background-color: #4CA0DB;
 }
 #bottomhalf
 {
-    /* display: flex;
-    flex-direction: column; */
     padding-top: 30px;
     padding-left:100px;
 }
@@ -62,7 +60,7 @@ background-color: #4CA0DB;
     background-color: white;
     width: 500px;
     padding:10px;
-    outline: 2px #DEDEDE;
+    outline: solid 2px #DEDEDE;
     outline-offset: -10px;
     float:left;
     background-clip:content-box;
@@ -78,7 +76,7 @@ background-color: #4CA0DB;
     background-color: white;
     width: 500px;
     padding:10px;
-    outline: 2px #DEDEDE;
+    outline: solid 2px #DEDEDE;
     outline-offset: -10px;
     float:left;
     background-clip:content-box;
@@ -92,7 +90,7 @@ background-color: #4CA0DB;
 {
     background-clip:content-box;
     padding:10px;
-    outline: 2px #DEDEDE;
+    outline: solid 2px #DEDEDE;
     outline-offset: -10px;
 }
 #box3 *
