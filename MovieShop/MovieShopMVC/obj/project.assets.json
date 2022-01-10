@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "ApplicationCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ApplicationCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ApplicationCore.dll": {}
+        }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ApplicationCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ApplicationCore/1.0.0": {
+      "type": "project",
+      "path": "../ApplicationCore/ApplicationCore.csproj",
+      "msbuildProject": "../ApplicationCore/ApplicationCore.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Infrastructure >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Basel\\.nuget\\packages\\": {}
@@ -13,11 +50,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Basel\\source\\repos\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
+      "projectUniqueName": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
       "projectName": "MovieShopMVC",
-      "projectPath": "C:\\Users\\Basel\\source\\repos\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
+      "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
       "packagesPath": "C:\\Users\\Basel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Basel\\source\\repos\\MovieShop\\MovieShopMVC\\obj\\",
+      "outputPath": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\MovieShopMVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Basel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,7 +70,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\Infrastructure\\Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
