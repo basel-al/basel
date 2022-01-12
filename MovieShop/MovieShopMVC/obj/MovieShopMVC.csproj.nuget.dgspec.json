@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj": {}
+    "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\ApplicationCore\\ApplicationCore.csproj": {
+    "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\ApplicationCore\\ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
+        "projectUniqueName": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
         "projectName": "ApplicationCore",
-        "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
+        "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
         "packagesPath": "C:\\Users\\Basel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\ApplicationCore\\obj\\",
+        "outputPath": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\ApplicationCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Basel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,14 +58,14 @@
         }
       }
     },
-    "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Basel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Basel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +82,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\ApplicationCore\\ApplicationCore.csproj": {
-                "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\ApplicationCore\\ApplicationCore.csproj"
+              "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\ApplicationCore\\ApplicationCore.csproj": {
+                "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\ApplicationCore\\ApplicationCore.csproj"
               }
             }
           }
@@ -97,6 +97,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -116,14 +126,14 @@
         }
       }
     },
-    "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj": {
+    "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
+        "projectUniqueName": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
         "projectName": "MovieShopMVC",
-        "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
+        "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
         "packagesPath": "C:\\Users\\Basel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\MovieShopMVC\\obj\\",
+        "outputPath": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\MovieShopMVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Basel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -140,8 +150,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -155,6 +165,28 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

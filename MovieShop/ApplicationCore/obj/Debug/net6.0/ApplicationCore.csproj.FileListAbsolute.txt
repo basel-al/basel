@@ -10,3 +10,15 @@ C:\Users\Basel\Desktop\GITHUB\MovieShop\ApplicationCore\obj\Debug\net6.0\Applica
 C:\Users\Basel\Desktop\GITHUB\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.dll
 C:\Users\Basel\Desktop\GITHUB\MovieShop\ApplicationCore\obj\Debug\net6.0\ref\ApplicationCore.dll
 C:\Users\Basel\Desktop\GITHUB\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.pdb
+C:\Users\Basel\Desktop\GITHUB - Copy\MovieShop\ApplicationCore\bin\Debug\net6.0\ApplicationCore.deps.json
+C:\Users\Basel\Desktop\GITHUB - Copy\MovieShop\ApplicationCore\bin\Debug\net6.0\ApplicationCore.dll
+C:\Users\Basel\Desktop\GITHUB - Copy\MovieShop\ApplicationCore\bin\Debug\net6.0\ref\ApplicationCore.dll
+C:\Users\Basel\Desktop\GITHUB - Copy\MovieShop\ApplicationCore\bin\Debug\net6.0\ApplicationCore.pdb
+C:\Users\Basel\Desktop\GITHUB - Copy\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.csproj.AssemblyReference.cache
+C:\Users\Basel\Desktop\GITHUB - Copy\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Basel\Desktop\GITHUB - Copy\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfoInputs.cache
+C:\Users\Basel\Desktop\GITHUB - Copy\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfo.cs
+C:\Users\Basel\Desktop\GITHUB - Copy\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.csproj.CoreCompileInputs.cache
+C:\Users\Basel\Desktop\GITHUB - Copy\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.dll
+C:\Users\Basel\Desktop\GITHUB - Copy\MovieShop\ApplicationCore\obj\Debug\net6.0\ref\ApplicationCore.dll
+C:\Users\Basel\Desktop\GITHUB - Copy\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.pdb

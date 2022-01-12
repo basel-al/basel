@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
+      "projectUniqueName": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
       "projectName": "ApplicationCore",
-      "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
+      "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
       "packagesPath": "C:\\Users\\Basel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Basel\\Desktop\\GITHUB\\MovieShop\\ApplicationCore\\obj\\",
+      "outputPath": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\ApplicationCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Basel\\AppData\\Roaming\\NuGet\\NuGet.Config",
