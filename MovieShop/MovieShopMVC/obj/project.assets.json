@@ -1902,11 +1902,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
+      "projectUniqueName": "C:\\Users\\Basel\\Desktop\\BootstrapAssignment\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
       "projectName": "MovieShopMVC",
-      "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
+      "projectPath": "C:\\Users\\Basel\\Desktop\\BootstrapAssignment\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
       "packagesPath": "C:\\Users\\Basel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\MovieShopMVC\\obj\\",
+      "outputPath": "C:\\Users\\Basel\\Desktop\\BootstrapAssignment\\MovieShop\\MovieShopMVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Basel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1923,8 +1923,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Basel\\Desktop\\GITHUB - Copy\\MovieShop\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\Basel\\Desktop\\BootstrapAssignment\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Basel\\Desktop\\BootstrapAssignment\\MovieShop\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

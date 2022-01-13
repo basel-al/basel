@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infrastructure.Migrations
 {
-    public partial class Everything : Migration
+    public partial class everything : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,10 +15,10 @@ namespace Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TmdbUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProfilePath = table.Column<string>(type: "nvarchar(2084)", maxLength: 2084, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TmdbUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProfilePath = table.Column<string>(type: "nvarchar(2084)", maxLength: 2084, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -31,10 +31,10 @@ namespace Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TmdbUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProfilePath = table.Column<string>(type: "nvarchar(2084)", maxLength: 2084, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TmdbUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProfilePath = table.Column<string>(type: "nvarchar(2084)", maxLength: 2084, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -89,7 +89,7 @@ namespace Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -102,18 +102,18 @@ namespace Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
-                    HashedPassword = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: false),
-                    Salt = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    LockoutEndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastLoginDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsLocked = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
+                    FirstName = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    HashedPassword = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: true),
+                    Salt = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: true),
+                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: true),
+                    LockoutEndDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    LastLoginDateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsLocked = table.Column<bool>(type: "bit", nullable: true),
+                    AccessFailedCount = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -202,8 +202,8 @@ namespace Infrastructure.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MovieId = table.Column<int>(type: "int", nullable: false),
-                    TrailerUrl = table.Column<string>(type: "nvarchar(2084)", maxLength: 2084, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(2084)", maxLength: 2084, nullable: false)
+                    TrailerUrl = table.Column<string>(type: "nvarchar(2084)", maxLength: 2084, nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(2084)", maxLength: 2084, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -249,7 +249,7 @@ namespace Infrastructure.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    PurchaseNumber = table.Column<int>(type: "int", nullable: false),
+                    PurchaseNumber = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false, defaultValue: 9.9m),
                     PurchaseDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     MovieId = table.Column<int>(type: "int", nullable: false)
@@ -278,7 +278,7 @@ namespace Infrastructure.Migrations
                     MovieId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     Rating = table.Column<decimal>(type: "decimal(3,2)", nullable: false, defaultValue: 9.9m),
-                    ReviewText = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ReviewText = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

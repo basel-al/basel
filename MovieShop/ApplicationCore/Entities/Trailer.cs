@@ -13,8 +13,8 @@ namespace ApplicationCore.Entities
         //foreign key
         public int MovieId { get; set; }
 
-        public string TrailerUrl { get; set; }
-        public string Name { get; set; }
+        public string? TrailerUrl { get; set; }
+        public string? Name { get; set; }
 
 
         //navigation property
