@@ -1,32 +1,72 @@
 ﻿@model ApplicationCore.Models.MovieDetailsResponseModel
-<h2>
-    P
-   @Model.Tagline
-   @Model.Title
-   @Model.PosterUrl
-   P
-</h2>
 
    <div class="container">
-  <div class="row align-items-start">
-    <div class="col">
-    <img src ="@Model.PosterUrl" />
+  <div class="row align-items-start" style="background:linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(@Model.BackdropUrl) center no-repeat;">
+    <div class="col-3">
+    <img src ="@Model.PosterUrl" style="width:80%; float:right">
     </div>
-    <div class="col">
-         @Model.Title
+    <div class="col-6">
+         <div class="row" ><h2 style="color:white">@Model.Title</h2></div>
+         <div class="row" style="color:#6B757D">@Model.Tagline</div>
+         <div class="row" style="color:#6B757D" >                     
+             @Model.RunTime m | @Model.ReleaseDate.Value.Year
+          @foreach(var genre in Model.Genres)
+          {
+         @genre.Name
+         } 
+  
+         </div>        
+         <div class="row">Rating</div>
+        <div class="row" style="color:white">@Model.Overview</div>
 
-        @foreach(var genre in Model.Genres)
-    {
-      @genre.Name
-    }
     </div>
-    <div class="col">
+    <div class="col-3">
         <div class="row">
       <button type="button" class="btn btn-primary">REVIEW</button>
       </div>
       <div class="row">
         <button type="button" class="btn btn-secondary">BUY @Model.Price</button>
         </div>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-3" style ="background-color: #F8F9FA;font-weight: bold;">
+   <div class = row>MOVIE FACTS</div>
+   <div class = row>Release Date</div>
+   <div class = row>Run Time</div>
+   <div class = row>Box Office</div>
+   <div class = row>Budget</div>
+   <div class = row>IMdb</div>
+   <div class = row>Release Date</div>
+      <div class = row>TRAILERS</div>
+   <div class = row>
+       @foreach(var trailer in Model.Trailers)
+         {
+              <a href=@trailer.TrailerUrl>@trailer.Name</a> 
+         } 
+         </div>
+    </div>
+    <div class="col-9">
+        <div class="container">
+        <b>CAST</b>
+           @foreach(var cast in Model.Casts)
+         {
+             <div class="row">
+             <div class="col-1">
+             <img src ="@cast.ProfilePath" width="20" height="40">
+             </div>
+             <div class="col-3">
+             @cast.Name
+             </div>
+             <div class="col-3">
+             @cast.Character
+             </div>
+              </div>
+         } 
+
+         </div>
+         </div>
+    <div class="col">
     </div>
   </div>
   </div>
