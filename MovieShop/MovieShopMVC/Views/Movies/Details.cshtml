@@ -1,0 +1,32 @@
+﻿@model ApplicationCore.Models.MovieDetailsResponseModel
+<h2>
+    P
+   @Model.Tagline
+   @Model.Title
+   @Model.PosterUrl
+   P
+</h2>
+
+   <div class="container">
+  <div class="row align-items-start">
+    <div class="col">
+    <img src ="@Model.PosterUrl" />
+    </div>
+    <div class="col">
+         @Model.Title
+
+        @foreach(var genre in Model.Genres)
+    {
+      @genre.Name
+    }
+    </div>
+    <div class="col">
+        <div class="row">
+      <button type="button" class="btn btn-primary">REVIEW</button>
+      </div>
+      <div class="row">
+        <button type="button" class="btn btn-secondary">BUY @Model.Price</button>
+        </div>
+    </div>
+  </div>
+  </div>

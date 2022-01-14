@@ -1,12 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApplicationCore.Contracts.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MovieShopMVC.Controllers
 {
     public class MoviesController : Controller
     {
-        public IActionResult Index()
+        private readonly IMovieService _movieService;
+        public MoviesController(IMovieService movieService)
         {
-            return View();
+            _movieService = movieService;
+        }
+        public async Task<IActionResult> Details(int id)
+        {
+            var movieDetails = await _movieService.GetMovieDetails(id);
+            return View(movieDetails);
         }
     }
 }
