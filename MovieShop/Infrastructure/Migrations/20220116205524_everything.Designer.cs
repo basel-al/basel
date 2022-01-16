@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(MovieShopDbContext))]
-    [Migration("20220113014533_everything")]
+    [Migration("20220116205524_everything")]
     partial class everything
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

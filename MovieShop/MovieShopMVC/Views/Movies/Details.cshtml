@@ -1,43 +1,110 @@
 ﻿@model ApplicationCore.Models.MovieDetailsResponseModel
 
    <div class="container">
-  <div class="row align-items-start" style="background:linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(@Model.BackdropUrl) center no-repeat;">
+  <div class="row position-relative" style="background:linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(@Model.BackdropUrl) center no-repeat;">
     <div class="col-3">
     <img src ="@Model.PosterUrl" style="width:80%; float:right">
     </div>
     <div class="col-6">
-         <div class="row" ><h2 style="color:white">@Model.Title</h2></div>
-         <div class="row" style="color:#6B757D">@Model.Tagline</div>
-         <div class="row" style="color:#6B757D" >                     
+         <h2 style="color:white">@Model.Title</h2>
+         <div style="color:#6B757D">@Model.Tagline</div>
+         <div class = "mt-2 mb-2" style="color:#6B757D ; font-weight:bold" >                     
              @Model.RunTime m | @Model.ReleaseDate.Value.Year
+             <div class="float-end">
           @foreach(var genre in Model.Genres)
           {
-         @genre.Name
+              <span style ="display: inline-block" class="badge bg-secondary">@genre.Name</span>
          } 
-  
+        </div>
          </div>        
-         <div class="row">Rating</div>
-        <div class="row" style="color:white">@Model.Overview</div>
+        <div style="color:#6B757D" >  
+         @foreach(var review in Model.Reviews)
+          {
+         @review.Rating
+         } 
+         </div>
+
+         
+  
+        <div style="color:white">@Model.Overview</div>
 
     </div>
-    <div class="col-3">
-        <div class="row">
-      <button type="button" class="btn btn-primary">REVIEW</button>
+    <div class="col-3 mt-5">
+        <div>
+      <button type="button" class="btn btn-primary" style="border:1px solid white; background-color: transparent;" data-bs-toggle="modal" data-bs-target="#reviewModal">✎ REVIEW</button>
       </div>
-      <div class="row">
-        <button type="button" class="btn btn-secondary">BUY @Model.Price</button>
+       <div class="modal" id="reviewModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+        <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Please leave a review!</h5>
+      </div>
+      <div class="modal-body">
+          <form>
+            <select class="form-select" aria-label="rating">
+            <option selected>Select Rating</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            </select>
+            <div class="mb-3">
+            <label for="message-text" class="col-form-label">Review:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+            </div
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Submit</button>
         </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+       <div>
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#purchaseModal">BUY $@Model.Price</button>
+        </div>
+        <div class="modal" id="purchaseModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+        <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmation</h5>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to purchase @Model.Title for @Model.Price ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Purchase</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
     </div>
   </div>
     <div class="row">
     <div class="col-3" style ="background-color: #F8F9FA;font-weight: bold;">
-   <div class = row>MOVIE FACTS</div>
-   <div class = row>Release Date</div>
-   <div class = row>Run Time</div>
-   <div class = row>Box Office</div>
-   <div class = row>Budget</div>
-   <div class = row>IMdb</div>
-   <div class = row>Release Date</div>
+   <h4>MOVIE FACTS</h4>
+   <ul class="list-group list-group-flush">  
+   <li class="list-group-item">Release Date <span class="badge rounded-pill bg-secondary">@Model.ReleaseDate</span></li>
+   <li class="list-group-item">Run Time  <span class="badge rounded-pill bg-secondary">@Model.RunTime</span></li>
+   <li class="list-group-item">Box Office  <span class="badge rounded-pill bg-secondary">@string.Format("{0:C}",Model.Revenue)</span></li>
+   <li class="list-group-item">Budget  <span class="badge rounded-pill bg-secondary">@Model.Budget</span></li>
+   <li class="list-group-item">IMdb  <span class="badge rounded-pill bg-secondary">@Model.ImdbUrl</span></li>
+    </ul>
       <div class = row>TRAILERS</div>
    <div class = row>
        @foreach(var trailer in Model.Trailers)
@@ -48,22 +115,24 @@
     </div>
     <div class="col-9">
         <div class="container">
-        <b>CAST</b>
+        <h4>Cast</h4>
+         <div class="list-group list-group-flush">  
+             <a >
            @foreach(var cast in Model.Casts)
          {
-             <div class="row">
-             <div class="col-1">
+             <a asp-controller="Cast" asp-action="Details" asp-route-id=@cast.Id class="list-group-item list-group-item-action">
+             
              <img src ="@cast.ProfilePath" width="20" height="40">
-             </div>
-             <div class="col-3">
-             @cast.Name
-             </div>
-             <div class="col-3">
-             @cast.Character
-             </div>
-              </div>
-         } 
+             
 
+             @cast.Name
+
+
+             @cast.Character
+            
+             </a>
+         } 
+         </div>
          </div>
          </div>
     <div class="col">
