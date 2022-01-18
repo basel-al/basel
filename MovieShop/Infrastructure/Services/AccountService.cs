@@ -37,7 +37,6 @@ namespace Infrastructure.Services
                 LastName = model.LastName,
                 Salt = salt,
                 HashedPassword = hashedPassword,
-                DateOfBirth = model.DateOfBirth
             };
             var dbCreatedUser = await _userRepository.Add(newUser);
             if (dbCreatedUser.Id > 1)

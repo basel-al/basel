@@ -12,7 +12,7 @@ namespace ApplicationCore.Contracts.Services
         Task<bool> PurchaseMovie(PurchaseRequestModel purchaseRequest, int userId);
         Task<bool> IsMoviePurchased(PurchaseRequestModel purchaseRequest, int userId);
         //changed constructor
-        Task<List<PurchaseResponseModel>> GetAllPurchasesForUser(int id);
+        Task<PurchaseResponseModel> GetAllPurchasesForUser(int id);
         Task<PurchaseDetailsResponseModel> GetPurchasesDetails(int userId, int movieId);
         Task AddFavorite(FavoriteRequestModel favoriteRequest);
         Task RemoveFavorite(FavoriteRequestModel favoriteRequest);

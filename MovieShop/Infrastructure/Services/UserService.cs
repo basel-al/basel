@@ -14,104 +14,127 @@ namespace Infrastructure.Services
     {
         private IPurchaseRepository _purchaseRepository;
         private IUserRepository _userRepository;
-        public UserService(IPurchaseRepository purchaseRepository, IUserRepository userRepository)
+        private IMovieRepository _movieRepository;
+        public UserService(IPurchaseRepository purchaseRepository, IUserRepository userRepository, IMovieRepository movieRepository)
         {
             _purchaseRepository = purchaseRepository;
             _userRepository = userRepository;
+            _movieRepository = movieRepository;
         }
-        public Task AddFavorite(FavoriteRequestModel favoriteRequest)
+        public async Task AddFavorite(FavoriteRequestModel favoriteRequest)
         {
-            throw new NotImplementedException();
+            var newFavorite = new Favorite
+            {
+                Id = favoriteRequest.Id,
+                UserId = favoriteRequest.UserId,
+                MovieId = favoriteRequest.MovieId,
+            };
+            var user = await _userRepository.GetById(favoriteRequest.UserId);
+            user.Favorites.Add(newFavorite);
+        }
+        public async Task AddMovieReview(ReviewRequestModel reviewRequest)
+        {
+            var newReview = new Review
+            {
+                MovieId = reviewRequest.MovieId,
+                UserId = reviewRequest.UserId,
+                Rating = reviewRequest.Rating,
+                ReviewText = reviewRequest.ReviewText,
+            };
+            var movie = await _movieRepository.GetById(reviewRequest.MovieId);
+            movie.Reviews.Add(newReview);
         }
 
-        public Task AddMovieReview(ReviewRequestModel reviewRequest)
+        public async Task DeleteMovieReview(int userId, int movieId)
         {
-            throw new NotImplementedException();
-        }
-        
-        public Task DeleteMovieReview(int userId, int movieId)
-        {
-            throw new NotImplementedException();
+            var movie = await _movieRepository.GetById(movieId);
+            var user = await _userRepository.GetById(userId);
+            /*user.Reviews.Where*/
+
         }
 
-        public Task<bool> FavoriteExists(int id, int movieId)
+        public async Task<bool> FavoriteExists(int id, int movieId)
         {
+            var purchases = await _movieRepository.GetById(movieId);
             throw new NotImplementedException();
         }
 
         public async Task<FavoriteResponseModel> GetAllFavoritesForUser(int id)
         {
+            var myUser = await _userRepository.GetById(id);
+            myUser.Favorites.ToList();
+            return new FavoriteResponseModel
+            {
+
+            };
             throw new NotImplementedException();
         }
 
-        public async Task<List<PurchaseResponseModel>> GetAllPurchasesForUser(int id)
+        public async Task<PurchaseResponseModel> GetAllPurchasesForUser(int id)
         {
             var purchases = await _purchaseRepository.GetByUserId(id);
-            var myPurchases = new List<PurchaseResponseModel>();
-            foreach (var purchase in purchases)
+            var MyPurchasedMovies = new List<MovieCardResponseModel>();
+            foreach (var thepurchase in purchases)
             {
-                    myPurchases.Add(new PurchaseResponseModel { Id = purchase.Id, UserId = purchase.UserId, PurchaseNumber = purchase.PurchaseNumber });
-
+                MyPurchasedMovies.Add(new MovieCardResponseModel { Id = thepurchase.Movie.Id, Title = thepurchase.Movie.Title, PosterUrl = thepurchase.Movie.PosterUrl });
             }
+            var myPurchases = new PurchaseResponseModel
+            {
+                UserId = id,
+                TotalMoviesPurchased = purchases.Count,
+                PurchasedMovies = MyPurchasedMovies
+             };
             return myPurchases;
         }
 
         public async Task<UserReviewResponseModel> GetAllReviewsByUser(int id)
         {
-            /*var userDetails = await _userRepository.GetById(id);
-            *//*            var userModel = new UserLoginResponseModel
-                        {
-                            Id = id,
-                            FirstName = userDetails.FirstName,
-                            LastName = userDetails.LastName,
-                            Email = userDetails.Email,
-                            DateOfBirth = userDetails.DateOfBirth
-
-                        };*//*
-
-            var userModel = new UserReviewResponseModel
+            var myUser = await _userRepository.GetById(id);
+            myUser.Reviews.ToList();
+            return new UserReviewResponseModel
             {
-                UserId = id,
-                MovieId = userDetails.Reviews,
+
             };
-*//*            {
-                foreach(var reviews in userDetails.Reviews)
-                {
-
-                }
-                MovieId = userDetails.Reviews.MovieId,
-                UserId = id,
-
-            };*//*
-
-
-            foreach (var reviews in userDetails.Reviews)
-            {
-                userModel.Reviews.Add(new UserReviewResponseModel { MovieId = reviews.MovieId, UserId = reviews.UserId, Rating = reviews.Rating, ReviewText = reviews.ReviewText });
-            }
-            return userModel.Reviews;*/
-
-            throw new NotImplementedException();
         }
 
         public async Task<PurchaseDetailsResponseModel> GetPurchasesDetails(int userId, int movieId)
         {
-            //var purchaseDetails = await _purchaseRepository
-                throw new NotImplementedException();
+            var purchases = await _purchaseRepository.GetAll();
+            foreach (var purchase in purchases)
+            {
+                if (purchase.UserId == userId && purchase.MovieId == movieId)
+                {
+                    return new PurchaseDetailsResponseModel
+                    {
+                        Id = purchase.Id,
+                        UserId = purchase.UserId,
+                        PurchaseNumber = purchase.PurchaseNumber,
+                        TotalPrice = purchase.TotalPrice,
+                        PurchaseDateTime = purchase.PurchaseDateTime,
+                        MovieId = purchase.MovieId,
+                        Title = purchase.Movie.Title,
+                        PosterUrl = purchase.Movie.PosterUrl,
+                        ReleaseDate = purchase.Movie.ReleaseDate.GetValueOrDefault(),
+                    };
+                }
+            }
+            throw new Exception("error");
+
+
         }
 
         public async Task<bool> IsMoviePurchased(PurchaseRequestModel purchaseRequest, int userId)
         {
             var purchases = await _purchaseRepository.GetByUserId(userId);
-            foreach(var purchase in purchases)
+            foreach (var purchase in purchases)
             {
-                if(purchase.MovieId == purchaseRequest.MovieId)
+                if (purchase.MovieId == purchaseRequest.MovieId)
                 {
                     return true;
                 }
             }
             return false;
-            
+
         }
 
         public async Task<bool> PurchaseMovie(PurchaseRequestModel purchaseRequest, int userId)
@@ -134,7 +157,7 @@ namespace Infrastructure.Services
                 return false;
             }
 
-            
+
         }
 
         public Task RemoveFavorite(FavoriteRequestModel favoriteRequest)
@@ -148,3 +171,4 @@ namespace Infrastructure.Services
         }
     }
 }
+

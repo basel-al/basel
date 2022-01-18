@@ -1,5 +1,6 @@
 using ApplicationCore.Contracts.Repositories;
 using ApplicationCore.Contracts.Services;
+using ApplicationCore.Entities;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
@@ -16,7 +17,7 @@ builder.Services.AddScoped<ICastService, CastService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<ICastRepository, CastRepository>();
-
+/*builder.Services.AddScoped<IRepository<Genre>, EfRepository<Genre>>();*/
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

@@ -32,6 +32,10 @@ namespace Infrastructure.Repositories
             return movie;
         }
 
-
+        public Task<decimal> GetMovieRating()
+        {
+            throw new NotImplementedException();
+            /*var rating await _dbContext.Review.Where(r => r.MovieId == IDbContextFactory).DefaultIfEmpty*/
+        }
     }
 }

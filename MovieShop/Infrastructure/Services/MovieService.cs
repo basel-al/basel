@@ -18,6 +18,7 @@ namespace Infrastructure.Services
         {
             var movieDetails = await _movieRepository.GetById(id);
             var movieModel = new MovieDetailsResponseModel
+            /*var rating = await _movieRepository.GetMovieRating(id);*/
             {
                 Id = id,
                 Title = movieDetails.Title,

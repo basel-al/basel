@@ -12,7 +12,8 @@ namespace ApplicationCore.Models
         public int UserId { get; set; }
         public decimal Rating { get; set; }
         public string ReviewText { get; set; }
+        public string Name{ get; set; }
 
-        public List<MovieCardResponseModel> MovieTitle { get; set; }
+        /*public List<MovieCardResponseModel> MovieTitle { get; set; }*/
     }
 }
