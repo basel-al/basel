@@ -15,6 +15,9 @@ namespace ApplicationCore.Models
         public DateTime DateOfBirth { get; set; }
         public List<string> Roles { get; set; }
 
+        //?
+        public List<UserReviewResponseModel> Reviews{ get; set; }
+
 
     }
 }

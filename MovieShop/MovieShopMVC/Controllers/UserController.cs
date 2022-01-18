@@ -21,6 +21,7 @@ namespace MovieShopMVC.Controllers
             }
             return View();
         }
+        [HttpGet]
         public async Task<IActionResult> Favorites()
         {
             var isLoggedIn = HttpContext.User.Identity.IsAuthenticated;

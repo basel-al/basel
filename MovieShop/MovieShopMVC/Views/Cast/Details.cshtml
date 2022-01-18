@@ -1,16 +1,26 @@
 ﻿@model ApplicationCore.Models.CastDetailsResponseModel
 <div class="container">
 <div>
+<h1>
+@Model.Name
+</h1>
+</div>
+<div>
 <img src="@Model.ProfilePath"/>
 </div>
+
+@if(Model.Gender.Equals("1"))
+{
+    <div>Female</div>
+}
+else
+{
+    <div>Male</div>  
+}
+
 <div>
-@Model.Name
-</div>
-<div>
-@Model.Gender
-</div>
-<div>
-@Model.TmdbUrl
+ <a href=@Model.TmdbUrl>The Movie Database Profile</a> 
+
 </div>
 <div class="container-fluid">
 <div class ="row">
