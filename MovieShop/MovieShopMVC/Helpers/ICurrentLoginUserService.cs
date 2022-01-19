@@ -2,10 +2,11 @@
 {
     public interface ICurrentLoginUserService
     {
-        int UserId { get; set; }
-        string Email { get; set; }
-        string FullName { get; set; }
-        
-        bool IsAdmin { get; set; }
+        int UserId { get; }
+        string Email { get; }
+        string FullName { get; }
+        List<string> Roles { get; set; }
+        bool IsAdmin { get; }
+
     }
 }

@@ -47,9 +47,9 @@ namespace Infrastructure.Services
 
         public async Task DeleteMovieReview(int userId, int movieId)
         {
-            var movie = await _movieRepository.GetById(movieId);
-            var user = await _userRepository.GetById(userId);
-            /*user.Reviews.Where*/
+            var movies = await _movieRepository.GetById(movieId);
+            var reviewedMovie = movies.Reviews.Where(x => x.UserId == userId);
+            reviewedMovie.ToList().RemoveAt(0);
 
         }
 
@@ -90,10 +90,17 @@ namespace Infrastructure.Services
         public async Task<UserReviewResponseModel> GetAllReviewsByUser(int id)
         {
             var myUser = await _userRepository.GetById(id);
-            myUser.Reviews.ToList();
+            /*var reviewlist = myUser.Reviews.ToList();*/
+            var reviewlist = myUser.Reviews;
+            var MovieReviewsList = new List <MovieReviewResponseModel>();
+            foreach (var review in reviewlist)
+            {
+                MovieReviewsList.Add(new MovieReviewResponseModel { UserId = review.UserId, MovieId = review.MovieId, ReviewText = review.ReviewText, Rating = review.Rating , Name= review.Movie.Title});
+            }
             return new UserReviewResponseModel
             {
-
+                UserId=id,
+                MovieReviews= MovieReviewsList
             };
         }
 
@@ -160,14 +167,25 @@ namespace Infrastructure.Services
 
         }
 
-        public Task RemoveFavorite(FavoriteRequestModel favoriteRequest)
+        public async Task RemoveFavorite(FavoriteRequestModel favoriteRequest)
         {
-            throw new NotImplementedException();
+            var movies = await _movieRepository.GetById(favoriteRequest.MovieId);
+            var favoritedMovie = movies.Favorite.Where(x => x.UserId == favoriteRequest.UserId);
+            favoritedMovie.ToList().RemoveAt(0);
         }
 
-        public Task UpdateMovieReview(ReviewRequestModel reviewRequest)
+        public async Task UpdateMovieReview(ReviewRequestModel reviewRequest)
         {
-            throw new NotImplementedException();
+            var movies = await _movieRepository.GetById(reviewRequest.MovieId);
+            var favoritedMovie = movies.Favorite.Where(x => x.UserId == reviewRequest.UserId);
+            var x = new Review
+            {
+                MovieId = reviewRequest.MovieId,
+                UserId = reviewRequest.UserId,
+                Rating = reviewRequest.Rating,
+                ReviewText = reviewRequest.ReviewText,
+            };
+            favoritedMovie.ToList().RemoveAt(0);
         }
     }
 }

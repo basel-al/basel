@@ -24,5 +24,6 @@ namespace Infrastructure.Repositories
             var user = await _dbContext.Users.FirstOrDefaultAsync(x => x.Email == email);
             return user;
         }
+
     }
 }

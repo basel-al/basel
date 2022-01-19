@@ -1,18 +1,31 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using System.Security.Claims
+@using MovieShopMVC.Helpers
+@inject ICurrentLoginUserService _currentUser
 @if (User.Identity.IsAuthenticated)
 {
-<div>
+    <div>
+        <ul class="nav">
+            <li class="nav-item dropdown">
+                <a class=" nav-link dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    @_currentUser.FullName
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" asp-controller="User" asp-action="Purchases"> Movies </a>
+                    <a class="dropdown-item" asp-controller="User" asp-action="Favorites"> Favorites </a>
+                    <a class="dropdown-item" asp-controller="User" asp-action="Profile"> View Profile </a>
+                    <a class="dropdown-item" asp-controller="User" asp-action="EditProfile"> Edit Profile </a>
+                    <a class="dropdown-item" asp-controller="Account" asp-action="Logout"> Logout </a>
+                </div>
+            </li>
 
-    <ul>
-
-    </ul>
-</div>
+        </ul>
+    </div>
 }
 else
 {
-<div class ="text-end">
-    
-</div>
+    <div class="text-end">
+        <a class=" btn btn-primary me-2" asp-controller="Account" asp-action="Login"> Login </a>
+        <a class=" btn btn-primary me-2" asp-controller="Account" asp-action="Register"> Register </a>
+
+    </div>
 }

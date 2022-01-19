@@ -12,11 +12,11 @@ namespace Infrastructure.Repositories
 {
     public class MovieRepository : EfRepository<Movie>, IMovieRepository
     {
-        private readonly MovieShopDbContext _dbContext;
+       /* private readonly MovieShopDbContext _dbContext;*/
 
         public MovieRepository(MovieShopDbContext dbContext):base(dbContext)
         {
-            _dbContext = dbContext;
+           /* _dbContext = dbContext;*/
         }
         public async Task <List<Movie>> Get30HighestGrossingMovies()
         {
@@ -32,10 +32,12 @@ namespace Infrastructure.Repositories
             return movie;
         }
 
-        public Task<decimal> GetMovieRating()
+       public async Task<decimal> GetMovieRating(int id)
         {
-            throw new NotImplementedException();
-            /*var rating await _dbContext.Review.Where(r => r.MovieId == IDbContextFactory).DefaultIfEmpty*/
+            var movieRating = await _dbContext.Reviews.Where(r => r.MovieId == id).DefaultIfEmpty().AverageAsync(r => r == null ? 0 : r.Rating);
+            return movieRating;
         }
+
+
     }
 }
