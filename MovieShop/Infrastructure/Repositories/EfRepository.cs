@@ -26,6 +26,12 @@ namespace Infrastructure.Repositories
 
         public virtual Task Delete(int id)
         {
+            /*            _dbContext.Set<T>().Remove
+                        await _dbContext.SaveChangesAsync();
+                        *//*            _dbContext.Set<T>().Remove(_dbContext.Set<T>().Where(x => x == id));
+                                    _dbContext.SaveChangesAsync();*//*
+                        return entity;
+            */
             throw new NotImplementedException();
         }
 

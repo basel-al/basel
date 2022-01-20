@@ -10,5 +10,7 @@ namespace ApplicationCore.Contracts.Repositories
     public interface IUserRepository : IRepository<User>
     {
         Task<User> GetUserByEmail(string email);
+        Task<List<Favorite>> GetFavoritesOfUser(int userId);
+        Task DeleteFavorite(int movieId, int userId);
     }
 }

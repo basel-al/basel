@@ -1,6 +1,8 @@
 ﻿
 
 @model ApplicationCore.Models.MovieDetailsResponseModel
+@using MovieShopMVC.Helpers
+@inject ICurrentLoginUserService _currentUser
 <div class="container-fluid">
    <div class="row position-relative" style="background:linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(@Model.BackdropUrl) center no-repeat;">
       <div class="col-3">
@@ -81,7 +83,7 @@
                         </div>
                         <div class="modal-footer">
                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                           <a asp-controller="User" asp-action="Purchases" asp-route-id="@Model.Id">
+                           <a asp-controller="User" asp-action="BuyForUser" asp-route-id=@_currentUser.UserId>
                            <button type="button" class="btn btn-primary">Purchase</button>
                            </a>
                         </div>

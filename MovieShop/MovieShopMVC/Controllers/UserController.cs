@@ -10,43 +10,50 @@ namespace MovieShopMVC.Controllers
     public class UserController : Controller
     {
         private IUserService _userService;
+        private readonly IMovieService _movieService;
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Purchases()
         {
-            var isLoggedIn = HttpContext.User.Identity.IsAuthenticated;
-            if(isLoggedIn)
-            {
-                var userId = Convert.ToInt32(HttpContext?.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
-/*                var purchaseRequest = new PurchaseRequestModel
-                {
-                    UserId = userId,
-
-
-                };
-                _userService.PurchaseMovie(purchaseRequest);*/
-
-            }
-            else
-            {
-                RedirectToAction("Login", "Account");
-            }
+      
+            var userId = Convert.ToInt32(HttpContext?.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
+            var x=_userService.GetAllPurchasesForUser(userId);
             return View();
         }
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Favorites()
         {
-            var isLoggedIn = HttpContext.User.Identity.IsAuthenticated;
-            if (isLoggedIn)
-            {
-                var userId = Convert.ToInt32(HttpContext?.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
-            }
-            else
-            {
-                RedirectToAction("Login", "Account");
-            }
+            var userId = Convert.ToInt32(HttpContext?.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
+            var x = _userService.GetAllFavoritesForUser(userId);
             return View();
         }
- 
+        public Task<IActionResult> Profile()
+        {
+            return null;
 
+        }
+        public Task<IActionResult> EditProfile()
+        {
+            return null;
+
+        }
+       [HttpPost]
+        public async Task<IActionResult> BuyForUser(int id)
+        {
+            var moviedetails = await _movieService.GetMovieDetails(id);
+            var request = new PurchaseRequestModel
+            { Id = moviedetails.Id,
+                TotalPrice = moviedetails.Price.Value,
+                PurchaseDateTime = DateTime.Now,
+            };
+
+            var x = await _userService.PurchaseMovie(request, id);
+            return View();
+        }
+/*        public async Task<IActionResult> ReviewByUser(PurchaseRequestModel model)
+        {
+            var x = await _userService.PurchaseMovie.
+        }*/
     }
 }

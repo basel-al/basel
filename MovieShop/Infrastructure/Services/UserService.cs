@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ApplicationCore.Models.FavoriteResponseModel;
 
 namespace Infrastructure.Services
 {
@@ -62,30 +63,27 @@ namespace Infrastructure.Services
 
         public async Task<FavoriteResponseModel> GetAllFavoritesForUser(int id)
         {
-            var myUser = await _userRepository.GetById(id);
-            myUser.Favorites.ToList();
-            return new FavoriteResponseModel
-            {
+            var favs = await _userRepository.GetFavoritesOfUser(id);
 
-            };
-            throw new NotImplementedException();
+            var favoriteresponse = new FavoriteResponseModel();
+            foreach (var fav in favs)
+            {
+                favoriteresponse.UserId = id;
+                favoriteresponse.FavoriteMovies.Add(new FavoriteMovieResponseModel { Id = fav.MovieId, Title = fav.Movie.Title, PosterUrl = fav.Movie.PosterUrl, ReleaseDate = fav.Movie.ReleaseDate.Value });
+            }
+            return favoriteresponse;
         }
 
         public async Task<PurchaseResponseModel> GetAllPurchasesForUser(int id)
         {
-            var purchases = await _purchaseRepository.GetByUserId(id);
-            var MyPurchasedMovies = new List<MovieCardResponseModel>();
-            foreach (var thepurchase in purchases)
+            var mypurchases = await _purchaseRepository.GetPurchasesOfUser(id);
+            var purchaseresponse = new PurchaseResponseModel();
+            purchaseresponse.UserId = id;
+            foreach (var thepurchase in mypurchases)
             {
-                MyPurchasedMovies.Add(new MovieCardResponseModel { Id = thepurchase.Movie.Id, Title = thepurchase.Movie.Title, PosterUrl = thepurchase.Movie.PosterUrl });
+                purchaseresponse.PurchasedMovies.Add(new MovieCardResponseModel { Id = thepurchase.Movie.Id, Title = thepurchase.Movie.Title, PosterUrl = thepurchase.Movie.PosterUrl });
             }
-            var myPurchases = new PurchaseResponseModel
-            {
-                UserId = id,
-                TotalMoviesPurchased = purchases.Count,
-                PurchasedMovies = MyPurchasedMovies
-             };
-            return myPurchases;
+            return purchaseresponse;
         }
 
         public async Task<UserReviewResponseModel> GetAllReviewsByUser(int id)
@@ -133,6 +131,17 @@ namespace Infrastructure.Services
 
         public async Task<bool> IsMoviePurchased(PurchaseRequestModel purchaseRequest, int userId)
         {
+            var y = await _purchaseRepository.GetPurchasesOfUser(userId);
+            foreach(var t in y)
+            {
+                
+                t.Id = purchaseRequest.Id;
+                t.UserId = userId;
+                t.PurchaseNumber = purchaseRequest.PurchaseNumber;
+                t.TotalPrice = purchaseRequest.TotalPrice;
+                t.PurchaseDateTime = purchaseRequest.PurchaseDateTime;
+                t.MovieId = purchaseRequest.MovieId;
+            }
             var purchases = await _purchaseRepository.GetByUserId(userId);
             foreach (var purchase in purchases)
             {
@@ -146,11 +155,10 @@ namespace Infrastructure.Services
         }
 
         public async Task<bool> PurchaseMovie(PurchaseRequestModel purchaseRequest, int userId)
-        {
-            /*var allpurchases = await _purchaseRepository.Add*/
+        {           
             var newPurchase = new Purchase
             {      
-           /*     Id = purchaseRequest.Id,*/
+                Id = purchaseRequest.Id,
                 UserId = userId,
                /*PurchaseNumber = purchaseRequest.PurchaseNumber,*/
                 TotalPrice = purchaseRequest.TotalPrice,
@@ -169,11 +177,13 @@ namespace Infrastructure.Services
 
         }
 
-        public async Task RemoveFavorite(FavoriteRequestModel favoriteRequest)
+       public async Task RemoveFavorite(FavoriteRequestModel favoriteRequest)
         {
-            var movies = await _movieRepository.GetById(favoriteRequest.MovieId);
-            var favoritedMovie = movies.Favorite.Where(x => x.UserId == favoriteRequest.UserId);
-            favoritedMovie.ToList().RemoveAt(0);
+            /*            var movies = await _userRepository.Delete
+                        var favoritedMovie = movies.Favorite.Where(x => x.UserId == favoriteRequest.UserId);
+                        favoritedMovie.ToList().RemoveAt(0);*/
+            throw new NotImplementedException();
+            
         }
 
         public async Task UpdateMovieReview(ReviewRequestModel reviewRequest)
