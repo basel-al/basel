@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using ApplicationCore.Contracts.Services;
+using ApplicationCore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -7,6 +9,7 @@ namespace MovieShopMVC.Controllers
     [Authorize]
     public class UserController : Controller
     {
+        private IUserService _userService;
         [HttpGet]
         public async Task<IActionResult> Purchases()
         {
@@ -14,6 +17,14 @@ namespace MovieShopMVC.Controllers
             if(isLoggedIn)
             {
                 var userId = Convert.ToInt32(HttpContext?.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
+/*                var purchaseRequest = new PurchaseRequestModel
+                {
+                    UserId = userId,
+
+
+                };
+                _userService.PurchaseMovie(purchaseRequest);*/
+
             }
             else
             {
@@ -35,5 +46,7 @@ namespace MovieShopMVC.Controllers
             }
             return View();
         }
+ 
+
     }
 }

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Models
 {
-    public class CastModel
+    public class TrailerResponseModel
     {
         public int Id { get; set; }
+        public int MovieId { get; set; }
         public string Name { get; set; }
-        public string Character { get; set; }
-        public string ProfilePath { get; set; }
+        public string TrailerUrl { get; set; }
+
     }
 }

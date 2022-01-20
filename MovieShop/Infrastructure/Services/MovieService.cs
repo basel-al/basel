@@ -17,8 +17,9 @@ namespace Infrastructure.Services
         public async Task<MovieDetailsResponseModel> GetMovieDetails(int id)
         {
             var movieDetails = await _movieRepository.GetById(id);
+            
+            var r = await _movieRepository.GetMovieRating(id);
             var movieModel = new MovieDetailsResponseModel
-            /*var rating = await _movieRepository.GetMovieRating(id);*/
             {
                 Id = id,
                 Title = movieDetails.Title,
@@ -31,7 +32,8 @@ namespace Infrastructure.Services
                 ReleaseDate=movieDetails.ReleaseDate,
                 Price= movieDetails.Price,
                 Budget = movieDetails.Budget,
-                Revenue = movieDetails.Revenue
+                Revenue = movieDetails.Revenue,
+                Rating = r
 
             };
             foreach(var genre in movieDetails.GenresOfMovie)
@@ -40,11 +42,11 @@ namespace Infrastructure.Services
             }
             foreach (var trailer in movieDetails.Trailers)
             {
-                movieModel.Trailers.Add(new TrailerModel { Id = trailer.Id, Name = trailer.Name, TrailerUrl = trailer.TrailerUrl });
+                movieModel.Trailers.Add(new TrailerResponseModel { Id = trailer.Id, Name = trailer.Name, TrailerUrl = trailer.TrailerUrl });
             }
             foreach (var cast in movieDetails.CastsOfMovie)
             {
-                movieModel.Casts.Add(new CastModel { Id = cast.CastId, Name = cast.Cast.Name, Character = cast.Character, ProfilePath=cast.Cast.ProfilePath});
+                movieModel.Casts.Add(new CastResponseModel { Id = cast.CastId, Name = cast.Cast.Name, Character = cast.Character, ProfilePath=cast.Cast.ProfilePath});
             }
 /*            foreach (var review in movieDetails.Reviews)
             {

@@ -12,11 +12,11 @@ namespace Infrastructure.Repositories
 {
     public class MovieRepository : EfRepository<Movie>, IMovieRepository
     {
-       /* private readonly MovieShopDbContext _dbContext;*/
+        private readonly MovieShopDbContext _dbContext;
 
         public MovieRepository(MovieShopDbContext dbContext):base(dbContext)
         {
-           /* _dbContext = dbContext;*/
+            _dbContext = dbContext;
         }
         public async Task <List<Movie>> Get30HighestGrossingMovies()
         {

@@ -2,6 +2,7 @@
 using ApplicationCore.Contracts.Services;
 using ApplicationCore.Entities;
 using ApplicationCore.Models;
+using Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -146,11 +147,12 @@ namespace Infrastructure.Services
 
         public async Task<bool> PurchaseMovie(PurchaseRequestModel purchaseRequest, int userId)
         {
+            /*var allpurchases = await _purchaseRepository.Add*/
             var newPurchase = new Purchase
-            {
-                Id = purchaseRequest.Id,
+            {      
+           /*     Id = purchaseRequest.Id,*/
                 UserId = userId,
-                PurchaseNumber = purchaseRequest.PurchaseNumber,
+               /*PurchaseNumber = purchaseRequest.PurchaseNumber,*/
                 TotalPrice = purchaseRequest.TotalPrice,
                 PurchaseDateTime = purchaseRequest.PurchaseDateTime,
             };

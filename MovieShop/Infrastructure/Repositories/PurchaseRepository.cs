@@ -24,5 +24,7 @@ namespace Infrastructure.Repositories
             return purchases;
         }
 
+
+
     }
 }

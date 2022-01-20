@@ -11,12 +11,13 @@ namespace ApplicationCore.Models
         public MovieDetailsResponseModel()
         {
             Genres = new List<GenreModel>();
-            Trailers = new List<TrailerModel>();
-            Casts = new List<CastModel>();
-            Reviews = new List<ReviewModel>();
+            Trailers = new List<TrailerResponseModel>();
+            Casts = new List<CastResponseModel>();
+            Reviews = new List<UserReviewResponseModel>();
         }
         public int Id { get; set; }
         public string? Title { get; set; }
+        public decimal? Rating { get; set; }
         public string? Overview { get; set; }
         public string? Tagline { get; set; }
         public decimal? Budget { get; set; }
@@ -34,9 +35,9 @@ namespace ApplicationCore.Models
         public string? UpdatedBy { get; set; }
         public string? CreatedBy { get; set; }
         public List<GenreModel> Genres { get; set; }
-        public List<TrailerModel> Trailers { get; set; }
-        public List<CastModel> Casts { get; set; }
-        public List<ReviewModel> Reviews { get; set; }
+        public List<TrailerResponseModel> Trailers { get; set; }
+        public List<CastResponseModel> Casts { get; set; }
+        public List<UserReviewResponseModel> Reviews { get; set; }
 
 
     }

@@ -18,19 +18,15 @@
                } 
             </div>
          </div>
-         <div style="color:#6B757D" >  
-            @foreach(var review in Model.Reviews)
-            {
-            @review.Rating
-            } 
-         </div>
+                 <h4><span style ="display: inline-block" class="badge bg-success mb-2">@Math.Round(Model.Rating.Value,1)</span></h4>
+
          <div style="color:white">@Model.Overview</div>
       </div>
       <div class="col-3 mt-5">
          <div class= "container btn-group">
             <div class="row">
                <div class="col">
-                  <button type="button" class="btn btn-primary" style="border:1px solid white; background-color: transparent;" data-bs-toggle="modal" data-bs-target="#reviewModal">✎ REVIEW</button>
+                  <button type="button" class="btn btn-primary float-end p-2 mb-3" style="border:1px solid white; background-color: transparent;" data-bs-toggle="modal" data-bs-target="#reviewModal">✎ REVIEW</button>
                </div>
                <div class="w-100"></div>
                <div class="modal" id="reviewModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
@@ -72,8 +68,7 @@
                    
 @*                   <a asp-controller="User" asp-action="PurchaseMovie" asp-route-id=userId >
                        </a>*@
-                  <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#purchaseModal">BUY $@Model.Price</button>
-                  </a>
+                  <button type="button" class="btn btn-light float-end" data-bs-toggle="modal" data-bs-target="#purchaseModal">BUY $@Model.Price</button>
                </div>
                <div class="modal" id="purchaseModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
                   <div class="modal-dialog">
@@ -103,8 +98,8 @@
          <ul class="list-group list-group-flush">
             <li class="list-group-item bg-transparent">Release Date <span class="badge rounded-pill bg-secondary">@Model.ReleaseDate.Value.ToString("MMMM dd, yyyy")</span></li>
             <li class="list-group-item bg-transparent">Run Time  <span class="badge rounded-pill bg-secondary">@Model.RunTime m</span></li>
-            <li class="list-group-item bg-transparent">Box Office  <span class="badge rounded-pill bg-secondary">@string.Format("{0:C}",Model.Revenue)</span></li>
-            <li class="list-group-item bg-transparent">Budget  <span class="badge rounded-pill bg-secondary">@string.Format("{0:C}",Model.Budget)</span></li>
+            <li class="list-group-item bg-transparent">Box Office  <span class="badge rounded-pill bg-secondary">@string.Format("{0:C0}",Model.Revenue)</span></li>
+            <li class="list-group-item bg-transparent">Budget  <span class="badge rounded-pill bg-secondary">@string.Format("{0:C0}",Model.Budget)</span></li>
             <li class="list-group-item bg-transparent"><a href= @Model.ImdbUrl class="text-decoration-none text-reset"> IMDb</a> </li>
          </ul>
          <h4>TRAILERS</h4>
